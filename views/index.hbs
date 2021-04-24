@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ares pag inicial</title>
+    <link rel="stylesheet" href="/styles/style-index.css" />
+    
+</head>
+<body>
+    <section> 
+        <h2>Ares</h2>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <div class="navigation">
+            <div class="navArea">
+                <ul>
+                    <li>
+                        <a href="#" onmouseenter="changeImage('/images/img1.gif')" >Home</a>
+                    </li>
+                    <li>
+                        <a href="#" onmouseenter="changeImage('/images/img2.jpeg')" >About</a>
+                    </li>
+                    <li>
+                        <a href="#" onmouseenter="changeImage('/images/img3.jpeg')" >Service</a>
+                    </li>
+                    <li>
+                        <a href="/auth-views/signup" onmouseenter="changeImage('/images/img4.jpeg')" >Login</a>
+                    </li>
+                    <li>
+                        <a href="#" onmouseenter="changeImage('/images/img5.jpeg')" >Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="imgArea">
+                <img src="/images/img2.jpeg" id="slider">
+            </div>
+        </div>
+
+        <div class="body" onclick='toggleMenu()'>   
+            <div id=container>
+                you 
+                <div id=flip>
+                <div><div>Comfort</div></div>
+                <div><div>Mobile</div></div>
+                <div><div>Everywhere</div></div>
+                </div>
+                LifeStyle!
+            </div>
+        </div> 
+
+    </section>
+    <script>
+        function changeImage(anything){
+            document.getElementById('slider').src = anything;
+        }
+        function toggleMenu(){
+            const menuToggle = document.querySelector('.menuToggle');
+            menuToggle.classList.toggle('active')
+
+            const flip = document.querySelector('.body');
+            flip.classList.toggle('active')
+
+            const navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active')
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+{{!-- <main class="home-conteiner">
+    <h1>ARES</h1>
+    <a href="/movies"> 
+        <button id="click"> Movies</button>
+    </a>
+    <a href="/movies/new"> 
+        <button id="insert"> Insert new movies</button>
+    </a>
+
+</main> --}}

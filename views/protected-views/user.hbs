@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile</title>
+        <link rel="stylesheet" href="/images/menu/css/all.min.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet"> 
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="stylesheet" href="/styles/user-menu.css"/>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <h4><a href="/user">Ares</a></h4>
+            </div>
+        </nav>
+
+        <div class="action">
+            <div class="profile" onclick="menuToggle();">
+                <img src="/images/menu/user.jpg">
+            </div>
+            <div class="menu">
+                <h1>{{loggedUser.userName}} <br> <span>Business Analyst</span></h1> 
+                <ul>
+                    <li><i class="fas fa-id-badge"></i><a href=""> My Profile</a> </li>
+                    <li><i class="far fa-edit"></i> <a href=""> Edit</a> </li>
+                    <li><i class="fas fa-inbox"></i> <a href=""> Mail</a> </li>
+                    <li><i class="fas fa-sliders-h"></i><a href=""> Settings</a> </li>
+                    <li><i class="fas fa-question-circle"></i><a href=""> Help</a> </li>
+                    <li><i class="fas fa-sign-out-alt"></i> <a href="/logout"> Logout</a> </li>
+
+                </ul>
+            </div>  
+        </div>
+
+        <div class="drop">
+            <div class="drop__container">
+                {{#if user}}
+                    {{#each user}}
+                        <div class="drop__card">
+                            <div class="drop__data">
+                                <img src="http://contentools.com.br/wp-content/uploads/2017/04/tecnicas-de-Marketing-Digital.jpg" alt="" class="drop__img">
+                                <div>
+                                    <h1 class="drop__name">{{this.username}}</h1>
+                                    <span class="drop__profession">{{this.vendorname}}</span>
+                                </div>
+            
+                                <div >
+                                    <a href="/private/{{this._id}}" class="drop__social"><i class='bx bx-info-circle' ></i></a>
+                    
+                                </div>                     
+                            </div>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <h1>Nenhum SHOP encontrado. Por favor refine sua busca </h1>
+                {{/if}}    
+
+            </div>
+        </div>
+        <!--===== SORTABLE JS =====-->
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="/Js/main.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ares login</title>
+    <link rel="stylesheet" href="/styles/style-register.css" />
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="user signupBx">
+                <div class="imgBx"> <img src="/images/img1.gif"> </div>
+                <div class="formBx">
+                    <form action="/partner-register"  method="post">
+                        <h1>Create an account</h1>
+                        <input type="text" name="username"  placeholder="Username" required>
+                        <input type="text" name="vendorname"    placeholder="Shop name" required>
+                        <input type="text" name="category"  placeholder="Category" required>
+                        <input type="text" name="location"  placeholder="Location" required>
+
+
+                        <div class="dropdown">
+                            <div class="dropdown-list">
+                                <select class="dropdown-list-item"> 
+                                     Mobilidade: 
+                                        <option value="movel"> Movel</option>
+                                        <option value="fixo"> Fixo</option>
+                                    
+                                </select>
+                            </div>    
+
+                        </div>    
+
+                        <input type="text" name="email"     placeholder="E-mail adress" required>
+                        <input type="password" name="password" placeholder="Create password"required>
+                        <input type="password"              placeholder="Confirm password">
+                        <input type="submit" value="Create">
+
+                        <p class="signup">aleready have an account? 
+                            <a href="/signup">Sign in.</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

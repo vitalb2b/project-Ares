@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reaponsive CSS Cards</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+        <link rel="stylesheet" href="/images/menu/css/all.min.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet"> 
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="/styles/style-private.css" />
+
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="logo">
+            <h4><a href="/user">Ares</a></h4>
+            </div>
+        </nav>
+
+        <div id="map"></div>
+
+        <div class="action">
+            <div class="profile" onclick="menuToggle();">
+                <img src="/images/menu/user.jpg">
+            </div>
+            <div class="menu">
+                <h1>{{loggedUser.userName}} <br> <span>Business Analyst</span></h1> 
+                <ul>
+                    <li><i class="fas fa-id-badge"></i><a href=""> My Profile</a> </li>
+                    <li><i class="far fa-edit"></i> <a href=""> Edit</a> </li>
+                    <li><i class="fas fa-inbox"></i> <a href=""> Mail</a> </li>
+                    <li><i class="fas fa-sliders-h"></i><a href=""> Settings</a> </li>
+                    <li><i class="fas fa-question-circle"></i><a href=""> Help</a> </li>
+                    <li><i class="fas fa-sign-out-alt"></i> <a href="/logout"> Logout</a> </li>
+
+                </ul>
+            </div>  
+        </div>
+
+        <div class="cardbody">
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    <div class="blog-slider__item swiper-slide">
+                        
+                        <form action="/newPhoto" method="post" enctype="multipart/form-data">   
+                                 
+                            <div class="blog-slider__img">
+                                <div class="container">
+                                    <div class="wrapper">
+                                        <div class="image">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+
+                                            <a href="#" onclick="defaultBtnActive()" id="custom-link" >Upload</a>
+                                            <input id="default-btn" type="file" hidden>
+                                        </div>
+                                        <div id="cancel-btn"><i class="fas fa-times"></i></div>
+                                        <div class="file-name">File name here</div>
+                                    </div>
+
+                                </div>
+                           
+                            </div>
+                        </form>    
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">{{vendor.username}} </span>
+                            <div class="blog-slider__title">{{vendor.vendorname}}</div>
+                            <div class="blog-slider__text">A vida floresceu na Terra, em grande parte, por sorte! </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="https://i.pinimg.com/564x/f9/35/55/f93555249a7dd93a41c43b50bfea4347.jpg" alt="">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">{{vendor.email}}</span>
+                            <div class="blog-slider__title">{{vendor.category}}</div>
+                            <div class="blog-slider__text">Os primeiros seres vivos que existiram na face da Terra datam de 3,8 bilhões de anos, e os cientistas os chamam de estromatolitos. 
+                                ... Esses primeiros seres vivos eram bem simples. À medida que os anos iam passando, eles iam evoluindo e, a partir deles, outras formas de vida iam surgindo.</div>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="http://contentools.com.br/wp-content/uploads/2017/04/tecnicas-de-Marketing-Digital.jpg" alt="">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">26 December 2019</span>
+                            <div class="blog-slider__title">Produtos</div>
+                            <div class="blog-slider__text">Estima-se que essa era geológica teve início a cerca de 2,5 bilhões de anos atrás e findou-se há 550 milhões de anos. 
+                                Na era geológica do Proterozoico ocorreu grande acúmulo de oxigênio na atmosfera. 
+                                Também ficou caracterizada pelo surgimento das primeiras formas de vida unicelulares avançadas.</div>
+                            <a href="#" class="blog-slider__button">Quer saber mais?</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="blog-slider__pagination"></div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+        <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=xM8gLQWCJJ9ZoVPjrNLzuMLMu5iTrbDO"></script>
+        <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=xM8gLQWCJJ9ZoVPjrNLzuMLMu5iTrbDO"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+       
+        <!--===== MAIN JS =====-->
+        <script src="/Js/cardmap.js"></script>
+    </body>
+</html>
